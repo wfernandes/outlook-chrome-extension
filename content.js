@@ -1,38 +1,25 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//   var checkPageButton = document.getElementById('checkPage');
-//   checkPageButton.addEventListener('click', function() {
-//       alert("hello world");
-
-//     // chrome.tabs.getSelected(null, function(tab) {
-//     //   d = document;
-
-//     //   var f = d.createElement('form');
-//     //   f.action = 'http://gtmetrix.com/analyze.html?bm';
-//     //   f.method = 'post';
-//     //   var i = d.createElement('input');
-//     //   i.type = 'hidden';
-//     //   i.name = 'url';
-//     //   i.value = tab.url;
-//     //   f.appendChild(i);
-//     //   d.body.appendChild(f);
-//     //   f.submit();
-//     // });
-//   }, false);
-// }, false);
-
 // content.js
 console.log("running wff-test extension");
 
+window.addEventListener("load", function(){
+    console.log("content: window loaded");
+    chrome.storage.sync.get(["calendarSidebar"], function(result){
+        console.log("content: calendarSidebar", result.calendarSidebar);
+        if (result.calendarSidebar) {
+            openCalendarSidebar();
+        }
+    });
+});
+
+function openCalendarSidebar(){
+    console.log("content: clicking time");
+    document.getElementById("Time").click();
+}
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    // for some reason we never see this.
-    console.log("document loadded");
-    dostuff();
-});
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.message === "clicked_browser_action" ) {
