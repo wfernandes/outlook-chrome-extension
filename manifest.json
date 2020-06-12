@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "wff test plugin",
+    "description": "this is a test plugin",
+    "version": "0.1",
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [
+      {
+        "run_at": "document_end",
+        "matches": [
+          "<all_urls>"
+        ],
+        "js": ["jquery-2.2.4.min.js","content.js"]
+      }
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    }
+}
