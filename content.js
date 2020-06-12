@@ -6,7 +6,7 @@ window.addEventListener("load", function(){
     chrome.storage.sync.get(["calendarSidebar"], function(result){
         console.log("content: calendarSidebar", result.calendarSidebar);
         if (result.calendarSidebar) {
-            openCalendarSidebar();
+            setTimeout(openCalendarSidebar, 1000);
         }
     });
 });
