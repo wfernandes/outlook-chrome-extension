@@ -29,7 +29,7 @@ function openCalendarSidebar(){
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.message === "clicked_browser_action" ) {
-        dostuff();
+        console.log("content: clicked_browser_action");
     }
   }
 );
