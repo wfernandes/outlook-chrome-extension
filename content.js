@@ -3,21 +3,27 @@ console.log("running wff-test extension");
 
 window.addEventListener("load", function(){
     console.log("content: window loaded");
+    // open calendar sidebar
     chrome.storage.sync.get(["calendarSidebar"], function(result){
-        console.log("content: calendarSidebar", result.calendarSidebar);
         if (result.calendarSidebar) {
             setTimeout(openCalendarSidebar, 1000);
         }
     });
+
+    // toggle request response
+    chrome.storage.sync.get(["requestResponse"], function(result){
+        // using bind to pass args to the function. See link for more info.
+        // https://stackoverflow.com/questions/1190642/how-can-i-pass-a-parameter-to-a-settimeout-callback
+        setTimeout(toggleRequestResponse.bind(null, result.requestResponse), 3000);
+    });
+
 });
 
 function openCalendarSidebar(){
-    console.log("content: clicking time");
-    document.getElementById("Time").click();
-}
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+    var sidebar = document.getElementById("Time");
+    if (sidebar != null ){
+        sidebar.click();
+    }
 }
 
 chrome.runtime.onMessage.addListener(
@@ -28,32 +34,20 @@ chrome.runtime.onMessage.addListener(
   }
 );
 
-var done = false;
 
-function dostuff() {
-    if (!done) {
-        console.log("do stuff");
+function toggleRequestResponse(toggle) {
+    if (toggle) {
         var responseOptionsEl = document.getElementsByName("Response options");
-        console.log("getting response options element", responseOptionsEl);
-        if (responseOptionsEl.length > 0) {
-            console.log("clicking response options");
-            responseOptionsEl[0].click();
-        }
-        var requestResponseEl = document.getElementsByName("Request responses");
-        console.log("moving on", requestResponseEl);
-        if (requestResponseEl.length > 0) {
-            console.log("clicking request responses");
-            requestResponseEl[0].click();
-            done = true;
+        if (responseOptionsEl != null) {
+            if (responseOptionsEl.length > 0) {
+                responseOptionsEl[0].click();
+            }
+            var requestResponseEl = document.getElementsByName("Request responses");
+            if (requestResponseEl != null && requestResponseEl.length > 0) {
+                requestResponseEl[0].click();
+            }
         }
     }
-}
-
-// try for 4s to try and get the elements and click them.
-for (let step = 0; step < 4; step++) {
-    sleep(1000).then(() => {
-        dostuff();
-    });
 }
 
 // NEXT STEPS
