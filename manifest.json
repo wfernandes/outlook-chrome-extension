@@ -19,7 +19,8 @@
       }
     ],
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["background.js"],
+        "persistent": false
     },
     "options_page": "options.html"
 }
