@@ -13,9 +13,16 @@
       {
         "run_at": "document_end",
         "matches": [
-          "<all_urls>"
+          "https://outlook.office.com/mail/*"
         ],
-        "js": ["jquery-2.2.4.min.js","content.js"]
+        "js": ["content_outlook_mail.js"]
+      },
+      {
+        "run_at": "document_end",
+        "matches": [
+          "https://outlook.office.com/calendar/deeplink/*"
+        ],
+        "js": ["content_outlook_calendar.js"]
       }
     ],
     "background": {
