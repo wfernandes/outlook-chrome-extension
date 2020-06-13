@@ -1,21 +1,22 @@
-# Outlook Chrome Extension
+# Outlook Web UXtras
 
-A chrome extension plugin that does some specific actions for the outlook web
-client.
+A chrome extension plugin that does provides some specific actions to improve
+the UX for the outlook web client.
 
 
-## Current functionality
+## Current Features
 
 ### Open Calendar Sidebar
 It opens the calendar sidebar in `https://outlook.office.com/mail/*`.
+
 ![outlook calendar sidebar](./docs/images/calendar-sidebar.png)
 
 ### Toggle Request Response in Calendar
 
-*NOTE* This feature only works when creating a calendar in an external chrome
+**NOTE** This feature *currently* only works when creating a calendar in an external
 window.
 
-Currently there is no way in the outlook settings to turn off `Request
+Currently, there is no way in the outlook settings to turn off `Request
 response`.
 
 In order to NOT force meeting attendees to turn off `Email
