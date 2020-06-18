@@ -3,7 +3,7 @@
     "name": "Outlook Web UXtras",
     "version": "0.0.1",
 
-    "description": "This extension improves some specific UX for the Outlook web client. See more info at https://github.com/wfernandes/outlook-chrome-extension",
+    "description": "This extension improves some specific UX for the Outlook web client.",
     "icons": {
         "16": "./outlook_chrome_extension_16.png",
         "48": "./outlook_chrome_extension_48.png",
