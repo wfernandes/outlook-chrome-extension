@@ -1,6 +1,3 @@
-// content.js
-console.log("running wff-test extension");
-
 window.addEventListener("load", function(){
     console.log("content: window loaded");
     // open calendar sidebar
@@ -26,13 +23,6 @@ function openCalendarSidebar(){
     }
 }
 
-chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
-    if( request.message === "clicked_browser_action" ) {
-        console.log("content: clicked_browser_action");
-    }
-  }
-);
 
 
 function toggleRequestResponse(toggle) {
@@ -49,8 +39,3 @@ function toggleRequestResponse(toggle) {
         }
     }
 }
-
-// NEXT STEPS
-// See if you can intercept a key event
-// See if you can run the extension based on a click of an element like
-// opening calendar events.

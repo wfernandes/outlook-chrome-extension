@@ -1,15 +1,18 @@
 {
     "manifest_version": 2,
     "name": "Outlook Web UXtras",
+    "version": "0.0.1",
+
     "description": "This extension improves some specific UX for the Outlook web client. See more info at https://github.com/wfernandes/outlook-chrome-extension",
-    "version": "0.1",
-    "browser_action": {
-        "default_icon": "./outlook_chrome_extension_16.png"
-    },
     "icons": {
         "16": "./outlook_chrome_extension_16.png",
         "48": "./outlook_chrome_extension_48.png",
         "128": "./outlook_chrome_extension_128.png"
+    },
+
+    "homepage_url": "https://github.com/wfernandes/outlook-chrome-extension",
+    "browser_action": {
+        "default_icon": "./outlook_chrome_extension_16.png"
     },
     "permissions": [
         "storage"
@@ -30,9 +33,5 @@
         "js": ["content_outlook_calendar.js"]
       }
     ],
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
     "options_page": "options.html"
 }
