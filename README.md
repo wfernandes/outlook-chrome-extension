@@ -6,8 +6,14 @@ the UX for the outlook web client.
 
 ## Current Features
 
+These features can be enabled from the Options page of the extension. Right
+click the extension icon and set the options.
+
+![options page](./docs/images/options-page.png)
+
 ### Open Calendar Sidebar
-It opens the calendar sidebar in `https://outlook.office.com/mail/*`.
+It opens the calendar sidebar in `https://outlook.office.com/mail/*`
+automatically.
 
 ![outlook calendar sidebar](./docs/images/calendar-sidebar.png)
 
