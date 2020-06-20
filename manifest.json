@@ -15,7 +15,9 @@
         "default_icon": "./outlook_chrome_extension_16.png"
     },
     "permissions": [
-        "storage"
+        "storage",
+        "https://outlook.office.com/mail/*",
+        "https://outlook.office.com/calendar/deeplink/*"
     ],
     "content_scripts": [
       {
