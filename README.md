@@ -3,6 +3,9 @@
 A chrome extension plugin that does provides some specific actions to improve
 the UX for the outlook web client.
 
+## Install
+
+[Install the chrome extension from here][chrome-plugin].
 
 ## Current Features
 
@@ -30,3 +33,5 @@ Organizier` when responding to a calendar invite, this feature allows the
 creator of the calendar invite to automatically turn that setting off.
 ![outlook calendar request
 response](./docs/images/calendar-request-response.png)
+
+[chrome-plugin]: https://chrome.google.com/webstore/detail/outlook-web-uxtras/cngcemdpbaiheobffhfeabbpcpnfajnl
