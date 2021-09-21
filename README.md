@@ -1,5 +1,7 @@
 # Outlook Web UXtras
 
+**WARNING: This repo is NOT being actively maintained.**
+
 A chrome extension plugin that does provides some specific actions to improve
 the UX for the outlook web client.
 
